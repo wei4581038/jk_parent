@@ -18,4 +18,13 @@
 	<bean id="deptService" class="cn.wei.jk.service.Impl.DeptServiceImpl">
 		<property name="baseDao" ref="baseDao" />
 	</bean>
+	<bean id="userService" class="cn.wei.jk.service.Impl.UserServiceImpl">
+		<property name="baseDao" ref="baseDao" />
+	</bean>
+	<bean id="roleService" class="cn.wei.jk.service.Impl.RoleServiceImpl">
+		<property name="baseDao" ref="baseDao" />
+	</bean>
+	<bean id="moduleService" class="cn.wei.jk.service.Impl.ModuleServiceImpl">
+		<property name="baseDao" ref="baseDao" />
+	</bean>
 </beans>

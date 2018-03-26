@@ -19,6 +19,9 @@
 		
 		<mapping resource="cn/wei/jk/domain/Dept.hbm.xml"/>
 		<mapping resource="cn/wei/jk/domain/User.hbm.xml"/>
+		<mapping resource="cn/wei/jk/domain/UserInfo.hbm.xml"/>
+		<mapping resource="cn/wei/jk/domain/Role.hbm.xml"/>
+		<mapping resource="cn/wei/jk/domain/Module.hbm.xml"/>
 		
 	</session-factory>
 	

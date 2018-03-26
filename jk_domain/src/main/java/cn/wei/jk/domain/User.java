@@ -1,14 +1,16 @@
 package cn.wei.jk.domain;
 
-import java.io.Serializable;
-import java.util.Date;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  * 
  * @author Administrator
  *多个用户对应一个部门
  *在多的一方建立对象  一的一方建立集合
  */
-public class User implements Serializable {
+public class User extends BaseEntity {
 	/**
 	 * 
 	 */
@@ -17,22 +19,17 @@ public class User implements Serializable {
 	private String  id; 
 	/**用户与部门  多对一*/
 	private Dept dept;
+	/**用户与角色多对多*/
+	private Set<Role> roles = new HashSet<Role>(0);
+	/**用户与用户的扩展信息    一对一**/
+	private UserInfo userInfo;
 	/**用户名 */
 	private String  userName;
 	/**  密码  要加密 */
 	private String  password;
 	/**状态*/
 	private Integer  state;
-	/**创建者的ID */
-	private String  createBy; 
-	/**  创建者所在的部门 */
-	private String  createDept;
-	/**创建时间 */
-	private Date  createTime;
-	/**更新者的ID */
-	private String updateBy;
-	/** 更新时间  */
-	private Date  updateTime;
+	
 	public String getId() {
 		return id;
 	}
@@ -63,35 +60,18 @@ public class User implements Serializable {
 	public void setState(Integer state) {
 		this.state = state;
 	}
-	public String getCreateBy() {
-		return createBy;
+	public UserInfo getUserInfo() {
+		return userInfo;
 	}
-	public void setCreateBy(String createBy) {
-		this.createBy = createBy;
+	public void setUserInfo(UserInfo userInfo) {
+		this.userInfo = userInfo;
 	}
-	public String getCreateDept() {
-		return createDept;
+	public Set<Role> getRoles() {
+		return roles;
 	}
-	public void setCreateDept(String createDept) {
-		this.createDept = createDept;
+	public void setRoles(Set<Role> roles) {
+		this.roles = roles;
 	}
-	public Date getCreateTime() {
-		return createTime;
-	}
-	public void setCreateTime(Date createTime) {
-		this.createTime = createTime;
-	}
-	public String getUpdateBy() {
-		return updateBy;
-	}
-	public void setUpdateBy(String updateBy) {
-		this.updateBy = updateBy;
-	}
-	public Date getUpdateTime() {
-		return updateTime;
-	}
-	public void setUpdateTime(Date updateTime) {
-		this.updateTime = updateTime;
-	}
+	
 	
 }

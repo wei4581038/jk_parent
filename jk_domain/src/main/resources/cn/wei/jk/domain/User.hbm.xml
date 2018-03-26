@@ -3,13 +3,20 @@
     "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
     "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping package="cn.wei.jk.domain">
-	<class name="User" table="USER_P">
+	<!-- dynamic-insert="true" dynamic-update="true"
+		ORA-01400: 无法将 NULL 插入 ("JK"."USER_P"."CREATE_TIME")
+		由于CREATE_TIME在页面中没入输入值，所以导致报这个错误
+		但是我们数据库中这个字段是有默认值的，只是没有生效，需要添加 dynamic-insert="true" dynamic-update="true"生效即可
+		
+	 -->
+	<class name="User" table="USER_P" dynamic-insert="true" dynamic-update="true">
 		<id name="id" column="USER_ID">
-			<generator class="uuid"></generator>
+			<generator class="assigned"></generator>
 		</id>
 		<property name="userName" column="USER_NAME"/>
 		<property name="password" column="PASSWORD"/>
 		<property name="state" column="STATE"/>
+		
 		<property name="createBy" column="CREATE_BY"/>
 		<property name="createDept" column="CREATE_DEPT"/>
 		<property name="createTime" column="CREATE_TIME"/>
@@ -18,6 +25,17 @@
 	
 		<!-- 自关联  子部门与父部门  多对一 -->
 		<many-to-one name="dept" class="Dept" column="DEPT_ID"></many-to-one>
+		
+		<!-- /**用户与用户的扩展信息    一对一**/ -->
+		<one-to-one name="userInfo" class="UserInfo" cascade="all"></one-to-one>
+		
+		<!-- private Set<Role> roles = new HashSet<Role>(0); 多对多的配置 -->
+		<set name="roles" table="ROLE_USER_P">
+		<!-- User中间表中关联到自己的外键 -->
+			<key column="USER_ID"></key>
+			
+			<many-to-many class="Role" column="ROLE_ID" order-by="ORDER_NO"></many-to-many>
+		</set>
 		
 	</class>
 </hibernate-mapping>

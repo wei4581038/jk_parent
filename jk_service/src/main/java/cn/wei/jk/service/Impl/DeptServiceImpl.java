@@ -8,6 +8,7 @@ import cn.wei.jk.dao.BaseDao;
 import cn.wei.jk.domain.Dept;
 import cn.wei.jk.service.DeptService;
 import cn.wei.jk.utils.Page;
+import cn.wei.jk.utils.UtilFuns;
 @SuppressWarnings("unchecked")
 public class DeptServiceImpl implements DeptService{
 
@@ -34,6 +35,10 @@ public class DeptServiceImpl implements DeptService{
 
 	
 	public void saveOrUpdate(Dept entity) {
+		if(UtilFuns.isEmpty(entity.getId())){
+			//新增
+			entity.setState(1); //1启用 0停用   默认为启用
+		}
 		baseDao.saveOrUpdate(entity);
 	}
 
