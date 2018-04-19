@@ -342,7 +342,9 @@
 					<target>1.7</target>
 					<encoding>UTF-8</encoding>
 					<showWarnings>true</showWarnings>
+					<compilerId>eclipse</compilerId>
 				</configuration>
+
 			</plugin>
 		</plugins>
 	</pluginManagement>

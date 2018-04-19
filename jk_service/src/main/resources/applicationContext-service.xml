@@ -18,13 +18,32 @@
 	<bean id="deptService" class="cn.wei.jk.service.Impl.DeptServiceImpl">
 		<property name="baseDao" ref="baseDao" />
 	</bean>
+	<!-- 用户管理service -->
 	<bean id="userService" class="cn.wei.jk.service.Impl.UserServiceImpl">
 		<property name="baseDao" ref="baseDao" />
+		<property name="mailSender" ref="mailSender" />
+		<property name="mailMessage" ref="mailMessage" />
 	</bean>
+	<!-- 角色管理service -->
 	<bean id="roleService" class="cn.wei.jk.service.Impl.RoleServiceImpl">
 		<property name="baseDao" ref="baseDao" />
 	</bean>
+	<!-- 模块管理service -->
 	<bean id="moduleService" class="cn.wei.jk.service.Impl.ModuleServiceImpl">
+		<property name="baseDao" ref="baseDao" />
+	</bean>
+	<!-- 工厂管理services -->
+	<bean id="factoryService" class="cn.wei.jk.service.Impl.FactoryServiceImpl">
+		<property name="baseDao" ref="baseDao" />
+	</bean>
+	<bean id="extCproductService" class="cn.wei.jk.service.Impl.ExtCproductServiceImpl">
+		<property name="baseDao" ref="baseDao" />
+	</bean>
+	<!-- 货运管理service -->
+	<bean id="contractService" class="cn.wei.jk.service.Impl.ContractServiceImpl">
+		<property name="baseDao" ref="baseDao" />
+	</bean>
+	<bean id="contractProductService" class="cn.wei.jk.service.Impl.ContractProductServiceImpl">
 		<property name="baseDao" ref="baseDao" />
 	</bean>
 </beans>

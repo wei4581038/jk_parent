@@ -39,5 +39,7 @@
 			<result name="alist" type="redirectAction">moduleAction_list</result>
 			<result name="toupdate">/WEB-INF/pages/sysadmin/module/jModuleUpdate.jsp</result>
 		</action>
+		
+
 	</package>
 </struts>

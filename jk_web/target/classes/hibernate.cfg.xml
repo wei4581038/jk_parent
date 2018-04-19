@@ -23,6 +23,12 @@
 		<mapping resource="cn/wei/jk/domain/Role.hbm.xml"/>
 		<mapping resource="cn/wei/jk/domain/Module.hbm.xml"/>
 		
+		<mapping resource="cn/wei/jk/domain/Contract.hbm.xml"/>
+		<mapping resource="cn/wei/jk/domain/ContractProduct.hbm.xml"/>
+		<mapping resource="cn/wei/jk/domain/ExtCproduct.hbm.xml"/>
+		<mapping resource="cn/wei/jk/domain/Factory.hbm.xml"/>
+		
+		
 	</session-factory>
 	
 </hibernate-configuration>

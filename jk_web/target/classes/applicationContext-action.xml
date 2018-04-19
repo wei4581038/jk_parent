@@ -33,8 +33,22 @@
 		<property name="roleService" ref="roleService"></property>
 		<property name="moduleService" ref="moduleService"></property>
 	</bean>
-	
+	<!-- 模块action -->
 	<bean id="moduleAction" class="cn.wei.jk.action.sysadmin.ModuleAction" scope="prototype">
 		<property name="moduleService" ref="moduleService"></property>
+	</bean>
+	<!-- 货运管理action -->
+	<bean id="contractAction" class="cn.wei.jk.action.cargo.ContractAction" scope="prototype">
+		<property name="contractService" ref="contractService"></property>
+	</bean>
+	<!-- 工厂action -->
+	<bean id="contractProductAction" class="cn.wei.jk.action.cargo.ContractProductAction" scope="prototype">
+		<property name="contractProductService" ref="contractProductService"></property>
+		<property name="factoryService" ref="factoryService"></property>
+	</bean>
+		<!-- 附件管理action -->
+	<bean id="extCproductAction" class="cn.wei.jk.action.cargo.ExtCproductAction" scope="prototype">
+		<property name="extCproductService" ref="extCproductService"></property>
+		<property name="factoryService" ref="factoryService"></property>
 	</bean>
 </beans>
